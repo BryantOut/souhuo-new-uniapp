@@ -188,7 +188,7 @@ export default {
       let code = this.$baseUtil.getUrlKey("code");
       let getWechatCode = this.$baseUtil.getUrlKey("getWechatCode");
       if (code) {
-        if (getWechatCode === "tonggao2022") return;
+        if (getWechatCode === "souhuo2024") return;
         this.login({
           code,
           tempFunName: h5Login,

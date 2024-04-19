@@ -12,6 +12,22 @@ export function checkLogin(data = {}) {
   });
 }
 
+// APP微信登录接口
+export function AppLogin(data = {}) {
+  return request({
+    url: "/WechatService/AppLogin",
+    data,
+  });
+}
+
+// APP苹果登录接口
+export function IOSAppLogin(data, successCallBack) {
+  return request({
+    url: "/WechatService/IOSAppLogin",
+    data,
+  });
+}
+
 /**
  * 小程序登录接口
  */
