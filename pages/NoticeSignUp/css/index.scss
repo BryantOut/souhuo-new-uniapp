@@ -1,0 +1,80 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .part {
+    width: 690rpx;
+    background-color: #fff;
+    border-radius: 20rpx;
+    padding: 24rpx;
+    box-sizing: border-box;
+    margin-top: 20rpx;
+    .pic {
+      width: 100%;
+    }
+    .mainTitle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 28rpx;
+      line-height: 1em;
+      margin-bottom: 20rpx;
+    }
+    .alertTipMain {
+		display: flex;
+      margin-bottom: 20rpx;
+	  line-height: 1.5rem;
+	  .iconfont {
+		  margin-right: 8rpx;
+	  }
+    }
+  }
+  .partOne {
+    .main {
+      margin-top: 20rpx;
+      .titleBox {
+        display: flex;
+        align-items: center;
+        margin-bottom: 18rpx;
+        .title {
+          flex: 1;
+          width: 70%;
+          line-height: 1em;
+        }
+      }
+      .tagList {
+        .tag {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .partTwo {
+    .myBusinessCardList {
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .isEmptyBtnBox {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 160rpx;
+      .themeBtn {
+        width: 536rpx;
+        height: 70rpx;
+        border-radius: 35rpx;
+        margin: 0 auto;
+      }
+    }
+  }
+  .partFour {
+    .addMore {
+      width: 100%;
+      min-height: 260rpx;
+    }
+  }
+  .pageFooter {
+    .main {
+    }
+  }
+}

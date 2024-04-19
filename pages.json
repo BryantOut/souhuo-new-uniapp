@@ -1,0 +1,207 @@
+{
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/Index/index",
+      "style": {
+        "navigationBarTitleText": "万有通告",
+        "navigationBarBackgroundColor": "#EF9E49",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/Cooperation/index",
+      "style": {
+        "navigationBarTitleText": "我的合作",
+        "navigationBarBackgroundColor": "#EF9E49",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/NoticeDetail/status2",
+      "style": {
+        "navigationBarTitleText": "通告详情"
+      }
+    },
+    {
+      "path": "pages/BusinessCardAuthentication/stepOne",
+      "style": {
+        "navigationBarTitleText": "名片认证"
+      }
+    },
+    {
+      "path": "pages/MyBusinessCard/index",
+      "style": {
+        "navigationBarTitleText": "我的名片",
+        "navigationBarBackgroundColor": "#EF9E49",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/MyBusinessCard/detail",
+      "style": {
+        "navigationBarTitleText": "名片详情",
+        "navigationBarBackgroundColor": "#EF9E49",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/BusinessCardAuthentication/stepTwo",
+      "style": {
+        "navigationBarTitleText": "名片认证"
+      }
+    },
+    {
+      "path": "pages/BusinessCardAuthentication/stepTwoOfModelCard",
+      "style": {
+        "navigationBarTitleText": "网拍模特认证"
+      }
+    },
+    {
+      "path": "pages/BusinessCardAuthentication/result",
+      "style": {
+        "navigationBarTitleText": "添加名片认证",
+        "navigationBarBackgroundColor": "#EF9E49",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/BusinessCardAuthentication/requestOfPic",
+      "style": {
+        "navigationBarTitleText": "照片要求"
+      }
+    },
+    {
+      "path": "pages/NoticeSignUp/index",
+      "style": {
+        "navigationBarTitleText": "通告报名",
+        "navigationBarBackgroundColor": "#EF9E49",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/NoticeDetail/index",
+      "style": {
+        "navigationBarTitleText": "通告详情"
+      }
+    },
+    {
+      "path": "pages/Login/index",
+      "style": {
+        // "navigationStyle": "custom"
+        "navigationBarTitleText": "登录、注册",
+        "navigationBarBackgroundColor": "#FFD18C"
+      }
+    },
+    {
+      "path": "pages/My/index",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationBarBackgroundColor": "#EF9E49",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/Login/loginByPhone",
+      "style": {
+        // "navigationStyle": "custom"
+        "navigationBarTitleText": "手机号登录、注册",
+        "navigationBarBackgroundColor": "#FFD18C"
+      }
+    },
+    {
+      "path": "pages/Express/companyList",
+      "style": {
+        // "navigationStyle": "custom"
+        "navigationBarTitleText": "快递大全",
+        "navigationBarBackgroundColor": "#FFD18C"
+      }
+    },
+    {
+      "path": "pages/Express/submitOrder",
+      "style": {
+        // "navigationStyle": "custom"
+        "navigationBarTitleText": "提交快递单号",
+        "navigationBarBackgroundColor": "#FFD18C"
+      }
+    },
+    {
+      "path": "pages/Express/expressInfo",
+      "style": {
+        // "navigationStyle": "custom"
+        "navigationBarTitleText": "快递物流信息",
+        "navigationBarBackgroundColor": "#FFD18C"
+      }
+    },
+    {
+      "path": "pages/SubmitApplyForRest/index",
+      "style": {
+        // "navigationStyle": "custom"
+        "navigationBarTitleText": "提交恢复申请",
+        "navigationBarBackgroundColor": "#FFD18C"
+      }
+    },
+    {
+      "path": "pages/SubmitApplyForCooperation/index",
+      "style": {
+        // "navigationStyle": "custom"
+        "navigationBarTitleText": "申请取消合作",
+        "navigationBarBackgroundColor": "#FFD18C"
+      }
+    },
+    {
+      "path": "pages/SubmitContent/index",
+      "style": {
+        // "navigationStyle": "custom"
+        "navigationBarTitleText": "提交内容",
+        "navigationBarBackgroundColor": "#FFD18C"
+      }
+    },
+	{
+	  "path": "pages/Result/submitSuccess",
+	  "style": {
+	    // "navigationStyle": "custom"
+	    "navigationBarTitleText": "提交成功",
+	    "navigationBarBackgroundColor": "#FFD18C"
+	  }
+	}
+  ],
+  "globalStyle": {
+    "navigationBarTitleText": "万有通告",
+    // #ifdef H5
+    "navigationStyle": "custom",
+    // #endif
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#C0C4CC",
+    "selectedColor": "#EF9E49",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/Index/index",
+        "iconPath": "static/image/home.png",
+        "selectedIconPath": "static/image/home_active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/Cooperation/index",
+        "iconPath": "static/image/cooperation.png",
+        "selectedIconPath": "static/image/cooperation_active.png",
+        "text": "我的合作"
+      },
+      {
+        "pagePath": "pages/My/index",
+        "iconPath": "static/image/my.png",
+        "selectedIconPath": "static/image/my_active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "uniIdRouter": {}
+}

@@ -1,0 +1,188 @@
+.page {  
+  .part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 690rpx;
+    margin: 20rpx auto 0;
+    background-color: #fff;
+    border-radius: 20rpx;
+    padding: 20rpx 30rpx 30rpx;
+    box-sizing: border-box;
+    .topPart {
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        font-size: 30rpx;
+        padding-left: 20rpx;
+        height: 50rpx;
+        margin: 0 4rpx 32rpx;
+        &::before {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          content: "";
+          width: 8rpx;
+          height: 28rpx;
+          background-color: #f41e3d;
+          border-radius: 10rpx;
+        }
+        .rightPart {
+          display: flex;
+          align-items: center;
+          .iconfont {
+            font-size: 28rpx;
+            margin-right: 4rpx;
+          }
+        }
+        &:nth-of-type(n + 2) {
+          margin-top: 50rpx;
+        }
+      }
+    }
+    .link {
+      display: flex;
+      align-items: center;
+      color: $linkColor;
+      .iconfont {
+        font-size: 34rpx;
+        margin-right: 4rpx;
+      }
+    }
+  }
+  .partOne {
+    // height: 448rpx;
+    .topPart {
+      .linkBox {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 108rpx;
+        border: 1px solid #F2F2F2;
+        border-radius: 10rpx;
+        overflow: hidden;
+        &.disabled {
+          background-color: #F2F2F2;
+          color: $textColor;
+          .iconClose {
+            color: #fff;
+          }
+        }
+        .linkInput {
+          flex: 1;
+          height: 100%;
+          font-size: 28rpx;
+          box-sizing: border-box;
+          padding: 0 26rpx;
+        }
+        .closeBox {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          width: 100rpx;
+          height: 100%;
+          .iconClose {
+            font-size: 36rpx;
+          }
+        }
+        .pasteBtn {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          color: $themeTextColor;
+          padding: 0 20rpx;
+          height: 100%;
+          &::before {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            content: "";
+            width: 1px;
+            height: 40rpx;
+            background-color: $borderColor;
+          }
+        }
+      }
+    }
+    .bottomPart {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .getBtn {
+        width: 100%;
+        margin: 32rpx 0 20rpx;
+      }
+    }
+    .inputInfoBox {
+      .subItem {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100rpx;
+        box-sizing: border-box;
+        border-top: 1px solid $borderColor;
+        &:first-child {
+          border: none;
+        }
+        .infoInput {
+          text-align: right;
+          flex: 1;
+        }
+      }
+    }
+  }
+  .partTwo {
+    height: 154rpx;
+    .topPart {
+      .title {
+        .copyBtn {
+          color: $themeTextColor;
+        }
+      }
+    }
+    .howToGetCode {
+      margin-left: 20rpx;
+    }
+  }
+  .picPart {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: 160rpx auto;
+    width: calc(3*(160rpx) + 2*(60rpx));
+    height: 160rpx;
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto;
+    column-gap: 10rpx;
+    &.of9 {
+      row-gap: 60rpx;
+      column-gap: 60rpx;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      height: calc(3*(160rpx) + 2*(60rpx));
+    }
+    &.of3 {
+      // row-gap: 60rpx;
+      column-gap: 60rpx;
+      grid-template-rows: repeat(1, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      height: 160rpx;
+    }
+    .tipList {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      grid-row: 1/span 2;
+      grid-column: 2/span 2;
+      height: 100%;
+      box-sizing: border-box;
+    }
+  }
+}

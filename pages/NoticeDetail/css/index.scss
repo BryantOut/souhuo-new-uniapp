@@ -1,0 +1,265 @@
+.page {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    .part {
+      width: 690rpx;
+      padding: 22rpx;
+      box-sizing: border-box;
+      border-radius: 20rpx;
+      background: #ffffff;
+      margin-top: 20rpx;
+      &:first-child {
+        margin-top: 0;
+      }
+      .mainTitle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 28rpx;
+        font-weight: 700;
+        line-height: 1em;
+        margin-bottom: 30rpx;
+      }
+    }
+    .partOne {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 160rpx;
+      .topPart {
+        display: flex;
+        align-items: center;
+        .subLeftPart {
+          display: flex;
+          align-items: center;
+          flex: 1;
+          overflow: hidden;
+          .platform {
+            margin-right: 12rpx;
+          }
+          .title {
+            font-weight: 700;
+          }
+        }
+      }
+      .bottomPart {
+        display: flex;
+        align-items: center;
+        font-size: 24rpx;
+        .title {
+          color: $tipColor;
+          margin-right: 22rpx;
+        }
+        .item {
+          display: flex;
+          align-items: center;
+          margin-right: 38rpx;
+          &:last-child {
+            margin-right: 0;
+          }
+          .iconfont {
+            margin-right: 8rpx;
+            font-size: 30rpx;
+          }
+        }
+      }
+    }
+    .partTwo {
+      .requirementList {
+        .item {
+          // font-size: 24rpx;
+          margin-bottom: 28rpx;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          .subItem {
+            display: flex;
+            // align-items: center;
+            padding-left: 20rpx;
+            margin-bottom: 14rpx;
+            &.special {
+              display: block;
+            }
+            &:last-child {
+              margin-bottom: 0;
+            }
+            &.wx {
+              .iconfont {
+                font-size: 32rpx;
+                color: #0ABC64;
+                margin-right: 10rpx;
+              }
+            }
+            &.subTitle {
+              position: relative;
+  
+              &::before {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                content: "";
+                width: 10rpx;
+                height: 90%;
+                border-radius: 20rpx;
+                background-color: $themeTextColor;
+              }              
+            }
+            .key {
+              color: $tipColor;
+              min-width: 120rpx;
+            }
+            .value {
+              flex: 1;
+            }            
+          }
+          .productImgs {
+            width: 100%;
+          }          
+          &.status2 {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            .qrCodeSrc {
+              width: 200rpx;
+              height: 200rpx;
+              margin-left: 20rpx;
+            }
+          }
+        }
+      }
+    }
+    .partThree {
+      .taskStepBox {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 10rpx;
+        box-sizing: border-box;
+        &::before {
+          position: absolute;
+          top: 26rpx;
+          left: 50%;
+          transform: translateX(-50%);
+          content: "";
+          width: 86%;
+          border-top: 1px dashed #d8d8d8;
+          z-index: 1;
+        }
+        .stepItem {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          color: $tipColor;
+          z-index: 2;
+          &.active {
+            .step {
+              background-color: $themeTextColor;
+              color: #fff;
+            }
+            .text {
+              font-weight: 700;
+            }
+          }
+          .step {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 52rpx;
+            height: 52rpx;
+            border: 1px solid $themeTextColor;
+            color: $themeTextColor;
+            border-radius: 50%;
+            margin-bottom: 22rpx;
+            background-color: #fff;
+          }
+        }
+      }
+      .tipBox {
+        display: flex;
+        margin-top: 32rpx;
+        color: $tipColor;
+        line-height: 36rpx;
+        .iconfont {
+          color: $tipColor;
+          line-height: 36rpx;
+          margin-right: 10rpx;
+        }
+      }
+    }
+    .partFour {
+      display: flex;
+      flex-direction: column;
+      .mainTitle {
+        .rightPart {
+          display: flex;
+          align-items: center;
+          font-size: 24rpx;
+          color: $tipColor;
+          .item {
+            margin-right: 18rpx;
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+      .con {
+        display: flex;
+        margin: 0 auto;
+        .headerList {
+          display: flex;
+          flex-wrap: wrap;
+          align-content: flex-start;
+          box-sizing: border-box;
+          width: calc(680rpx - 76rpx);
+          .headerItem {
+            position: relative;
+            width: 68rpx;
+            height: 68rpx;
+            border-radius: 50%;
+            background-color: #fff;
+            box-sizing: border-box;
+            margin-right: -8rpx;
+            &.more {
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
+              background: $tipColor;
+              .iconfont {
+                font-size: 40rpx;
+                color: #fff;
+              }
+            }
+          }
+        }
+        .signUpNumisZero {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          color: $tipColor;
+          height: 200rpx;
+        }
+      }
+    }  
+    .pageFooter {
+      z-index: 998;
+      .main {
+        justify-content: space-between;
+        .signUpBtn {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          width: 472rpx;
+          height: 74rpx;
+          background-color: $themeTextColor;
+          color: #fff;
+          border-radius: 37rpx;
+        }
+      }
+    }
+  }

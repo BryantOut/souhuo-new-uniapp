@@ -1,0 +1,129 @@
+.taskItem {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  min-height: 260rpx;
+  background-color: #fff;
+  padding: 20rpx 20rpx 0 20rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  overflow: hidden;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  .mainInfo {
+    border-bottom: 1px solid #f2f2f2;
+  }
+  .topPart {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20rpx;
+
+    .pic {
+      width: 140rpx;
+      height: 140rpx;
+      border-radius: 6rpx;
+      flex-shrink: 0;
+    }
+    .main {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      min-height: 140rpx;
+      margin-left: 18rpx;
+      overflow: hidden;
+      .subTopPart {
+        .titleBox {
+          display: flex;
+          align-items: center;
+          margin-bottom: 18rpx;
+          .title {
+            flex: 1;
+            width: 70%;
+            line-height: 1em;
+          }
+          .statusTag {
+            display: flex;
+            align-items: center;
+            height: 40rpx;
+            padding: 0 20rpx;
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 20rpx;
+            border-bottom-left-radius: 10rpx;
+            &.active {
+              background-color: #fdf2e3;
+              color: #ff9900;
+            }
+            &.unactive {
+              background: rgba(221, 221, 221, 0.5);
+              color: #666666;
+            }
+            &.seizeASeat {
+              position: static;
+              opacity: 0;
+            }
+          }
+        }
+      }
+      .bottomPart {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #666666;
+        font-size: 20rpx;
+        line-height: 1em;
+      }
+    }
+  }
+  .expressPart {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60rpx;
+    background-color: rgba(216, 216, 216, 0.3);
+    margin-bottom: 20rpx;
+    border-radius: 10rpx;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    span {
+      flex-shrink: 0;
+    }
+    .status {
+      margin: 0 20rpx 0 10rpx;
+    }
+    .new {
+      flex: 1;
+      overflow: hidden;
+      color: rgba(0,0,0,.5);
+    }
+  }
+  .bottomPart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10rpx 0;
+    .subLeftPart {
+      display: flex;
+      align-items: center;
+      font-size: 24rpx;
+      min-height: 60rpx;
+      .headPic {
+        width: 44rpx;
+        height: 44rpx;
+        border-radius: 50%;
+        margin-right: 14rpx;
+      }
+    }
+    .subRightPart {
+      display: flex;
+      align-items: center;
+      .btnType1 {
+        margin-left: 22rpx;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
