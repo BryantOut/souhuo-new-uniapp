@@ -221,7 +221,7 @@ export default {
     // 登录逻辑
     async login({ code = "", tempFunName = wxLogin }) {
       try {
-        const data = await tempFunName({ code });
+        const data = (await tempFunName({ code })).Data;
         const {
           tokenid,
           isLogin,

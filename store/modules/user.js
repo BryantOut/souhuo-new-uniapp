@@ -58,6 +58,7 @@ const user = {
     },
     SET_TOKEN: (state, token) => {
       state.token = token;
+      console.log(token)
       uni.setStorageSync("token", token);
     },
     SET_IS_HAVE_UNFINISHED_ORDER: (state, hasOrder) => {
