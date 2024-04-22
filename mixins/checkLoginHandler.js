@@ -1,6 +1,6 @@
 import { checkLogin, h5Login, wxLogin } from "@/api/user";
 
-import { mapGetters, mapMutations } from "vuex";
+import { mapGetters, mapActions, mapMutations } from "vuex";
 
 import { SHARE_URL, HREF_BASE_URL, APP_ID } from "@/config.js";
 
@@ -69,6 +69,9 @@ export default {
       "SET_TOKEN",
       "SET_UNION_ID",
       "SET_LOGIN_STATE",
+      "SET_IS_HAVE_UNFINISHED_ORDER",
+      "SET_NEW_PERSON_FREE_ORDER_COUNT",
+      "SET_IS_NEW_PERSON",
       "SET_CODE_IS_VAILD",
       "RESET_ALL_FILTERS",
       "SET_NICK",
@@ -80,6 +83,7 @@ export default {
       "SET_HOW_TO_BEHAVIOR_POPUP_SHOW",
       "SET_IN_COOPERATION_SIGNUP_NUM",
     ]),
+    ...mapActions(["loginHandler"]),
     onShowApp() {
       // 首次进入调用检测登录接口
       if (this.codeIsValid) {
@@ -110,7 +114,7 @@ export default {
       // #ifdef H5
       let baseHrefRandom = "";
       let redirectRouter = this.$baseUtil.getUrlKey("redirectRouter");
-      if (process.env.NODE_ENV === 'production' && redirectRouter) {
+      if (process.env.NODE_ENV === "production" && redirectRouter) {
         // 从分享页进来时，微信会给分享的链接添加一些后缀，所以进来时，需要将后缀截掉，否则无法跳转到相应的页面
         let link = `${SHARE_URL}?redirectRouter=${
           window.location.href.split("redirectRouter=")[1].split("&code=")[0]
@@ -188,7 +192,7 @@ export default {
       let code = this.$baseUtil.getUrlKey("code");
       let getWechatCode = this.$baseUtil.getUrlKey("getWechatCode");
       if (code) {
-        if (getWechatCode === "souhuo2024") return;
+        if (getWechatCode === "soho2018") return;
         this.login({
           code,
           tempFunName: h5Login,
@@ -215,38 +219,43 @@ export default {
       });
     },
     // 登录逻辑
-    login({ code = "", tempFunName = wxLogin }) {
-      tempFunName({
-        code: code,
-      })
-        .then((res) => {
-          // res.data.isLogin = false
-          this.SET_TOKEN(res.data.tokenId);
-          this.SET_LOGIN_STATE(res.data.isLogin);
-          this.SET_IN_COOPERATION_SIGNUP_NUM(res.data.inCooperationSignUpNum);
-		  this.SET_CODE_IS_VAILD(true);
-          // #ifdef H5
-          if (!this.isNeedUrlRedirect()) {
-            this.initHandler();
-          }
-          // #endif
-          // #ifdef MP-WEIXIN
-          this.SET_UNION_ID(res.data.loginVoPart.unionid);
+    async login({ code = "", tempFunName = wxLogin }) {
+      try {
+        const data = await tempFunName({ code });
+        const {
+          tokenid,
+          isLogin,
+          hasOrder,
+          newPersonFreeOrderCount,
+          isNewPerson,
+        } = data;
+        this.SET_TOKEN(tokenid);
+        this.SET_LOGIN_STATE(isLogin);
+        this.SET_IS_HAVE_UNFINISHED_ORDER(hasOrder);
+        this.SET_NEW_PERSON_FREE_ORDER_COUNT(newPersonFreeOrderCount);
+        this.SET_IS_NEW_PERSON(isNewPerson);
+        this.SET_CODE_IS_VAILD(true);
+        // #ifdef H5
+        if (!this.isNeedUrlRedirect()) {
           this.initHandler();
-          // #endif
-        })
-        .catch((err) => {
-          // #ifdef H5
-          if (process.env.NODE_ENV === "development") {
-            this.$baseUtil.normalErrMsgHandler(err);
-          } else {
-            this.logOut();
-          }
-          // #endif
-          // #ifdef MP-WEIXIN
+        }
+        // #endif
+        // #ifdef MP-WEIXIN
+        this.SET_UNION_ID(res.data.loginVoPart.unionid);
+        this.initHandler();
+        // #endif
+      } catch (err) {
+        // #ifdef H5
+        if (process.env.NODE_ENV === "development") {
           this.$baseUtil.normalErrMsgHandler(err);
-          // #endif
-        });
+        } else {
+          this.logOut();
+        }
+        // #endif
+        // #ifdef MP-WEIXIN
+        this.$baseUtil.normalErrMsgHandler(err);
+        // #endif
+      }
     },
     showLoginModal() {
       uni.showModal({

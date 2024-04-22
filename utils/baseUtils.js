@@ -383,9 +383,9 @@ export default {
   },
   normalErrMsgHandler(err) {
     let _this = this;
-    if (err.msg || err.errMsg) {
+    if (err.Msg || err.ErrMsg) {
       _this.showToast({
-        title: err.msg || err.errMsg,
+        title: err.Msg || err.ErrMsg,
       });
     }
   },

@@ -26,16 +26,16 @@ define({
 				timeout: 10000,
 				success: function(res) {
 					let {
-						isError,
-						errCode
+						IsError,
+						ErrCode
 					} = res.data
-					if (isError) {
-						if (errCode === 303) {
+					if (IsError) {
+						if (ErrCode === 303) {
 							// token 不存在或者已过期.
 							uni.clearStorageSync()
 							store.commit('SET_CODE_IS_VAILD', false)
 							if (process.env.NODE_ENV === 'development') {
-								baseUtil.normalErrMsgHandler(res.data);
+								baseUtil.normalErrMsgHandler(res.ErrMsg);
 							} else {
 								setTimeout(() => {
 									uni.reLaunch({
